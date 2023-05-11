@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Noticias{% endblock titulo %}
+
+{% block contenido %}
+	{% for noti in noticias %}
+		<br>
+		<h3><a href="{% url 'noticias:detalle' noti.pk %}">{{noti.titulo}}</a></h3>
+		<img src="{{noti.imagen.url}}" width="200" height="150">
+		<p>Fecha : {{noti.fecha}}</p>
+		<p>Categoría : {{noti.categoria_noticia}}</p>
+		<br><br>	
+	{% endfor %}
+{% endblock contenido %}

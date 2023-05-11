@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Noticia{% endblock titulo %}
+
+{% block contenido %}
+    <br>
+    <h3>{{noticia.titulo}}</h3>
+    <img src="{{noticia.imagen.url}}" width="600" height="350">
+    <p>Fecha : {{noticia.fecha}}</p>
+    <p>Categoría : {{noticia.categoria_noticia}}</p>
+    <p>{{noticia.cuerpo}}</p>
+{% endblock contenido %}
